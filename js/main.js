@@ -340,28 +340,32 @@
         data: {
           datasets: [
             {
-              label: "My First dataset",
-              data: [60, 40],
+              label: "Pourcentage de produits vendus ",
+              data: [30,55,15 ],
               backgroundColor: [
                 '#00b5e9',
-                '#fa4251'
+                '#fa4251',
+				'#888888'
               ],
               hoverBackgroundColor: [
                 '#00b5e9',
-                '#fa4251'
+                '#fa4251',
+				'#888888'
               ],
               borderWidth: [
-                0, 0
+                0, 0,0
               ],
               hoverBorderColor: [
                 'transparent',
-                'transparent'
+                'transparent',
+				'transparent'
               ]
             }
           ],
           labels: [
-            'Products',
-            'Services'
+            'Foie gras',
+            'Terinne',
+			'Autre'
           ]
         },
         options: {
@@ -373,7 +377,7 @@
             animateRotate: true
           },
           legend: {
-            display: false
+            display: true
           },
           tooltips: {
             titleFontFamily: "Poppins",
@@ -584,14 +588,14 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+          labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Decembre'],
           datasets: [
             {
-              label: "My First dataset",
+              label: "Nombre de commande du mois",
               data: [78, 81, 80, 64, 65, 80, 70, 75, 67, 85, 66, 68],
               borderColor: "transparent",
               borderWidth: "0",
-              backgroundColor: "#ccc",
+              backgroundColor: "#00B5E9",
             }
           ]
         },
@@ -602,12 +606,12 @@
           },
           scales: {
             xAxes: [{
-              display: false,
+              display: true,
               categoryPercentage: 1,
               barPercentage: 0.65
             }],
             yAxes: [{
-              display: false
+              display: true
             }]
           }
         }

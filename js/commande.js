@@ -53,4 +53,7 @@ $(document).ready(function(){
         $(this).parents("tr").remove();
 		$(".add-new").removeAttr("disabled");
     });
+	
+
+
 });
