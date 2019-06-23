@@ -33,88 +33,264 @@
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
 	<link rel="stylesheet" href="css/commande.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="js/commande.js"></script>
 
 </head>
-<body>
-
-    <div class="container">
-	
-		<div class="table-wrapper">
-			<div class="table-title">
-                <div class="row">
-                    <div class="col-sm-12"><h2>Bloc <b>Client</b></h2></div>
-
-                </div>
-				
-				
-            </div>
-		</div>
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-8"><h2>Bloc <b>Produit</b></h2></div>
-                    <div class="col-sm-4">
-                        <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Ajouter un produit</button>
+<body class="">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <img src="images/icon/LogoSide.png" alt="CoolAdmin" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
                     </div>
                 </div>
             </div>
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Réf.</th>
-                        <th style="width:150px;">Désignation</th>
-                        <th>Quantité</th>
-						<th>Prix unitaire</th>
-						<th>Remise</th>
-						<th>Montant</th>
-						<th>TVA</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>253</td>
-                        <td>Bloc de foie gras oie</td>
-                        <td>10</td>
-						<td>2</td>
-						<td>0%</td>
-						<td>20€</td>
-						<td>20%</td>
-                        <td>
-							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>23</td>
-                        <td>Terrine de St Jacques</td>
-                        <td>20</td>
-						<td>30</td>
-						<td>2%</td>
-						<td>588€</td>
-						<td>20%</td>
-                        <td>
-							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>  
-                </tbody>
-            </table>
-        </div>
-				<div class="table-wrapper">
-			<div class="table-title">
-                <div class="row">
-                    <div class="col-sm-12"><h2>Bloc <b>Récapitulatif</b></h2></div>
-
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a href="chart.html">
+                                <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>
+                        </li>
+                        <li>
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Commandes</a>
+                        </li>
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Clients</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-calendar-alt"></i>Livraison</a>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>Articles</a>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>Stock</a>
+                        </li>
+                    </ul>
                 </div>
-				
-				
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/icon/LogoSide.png" alt="Cool Admin" />
+                </a>
             </div>
-		</div>
-    </div>     
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="chart.html">
+                                <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>
+                        </li>
+                        <li>
+                            <a href="table.html">
+                                <i class="fas fa-table"></i>Commandes</a>
+                        </li>
+                        <li>
+                            <a href="form.html">
+                                <i class="far fa-check-square"></i>Clients</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-calendar-alt"></i>Livraison</a>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>Articles</a>
+                        </li>
+                        <li>
+                            <a href="map.html">
+                                <i class="fas fa-map-marker-alt"></i>Stock</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <div class="header-button">
+                            
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="images/icon/avatar-01.jpg" alt="Alain Birmont" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">Alain Birmont</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="images/icon/avatar-01.jpg" alt="Alain Birmont" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">Alain Birmont</a>
+                                                    </h5>
+                                                    <span class="email">AlainBirmont@side.com</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Compte</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Paramètres</a>
+                                                </div>
+
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Déconnexion</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="table-wrapper">
+   <div class="table-title">
+      <div class="row">
+         <div class="col-sm-12">
+            <h2>Bloc <b>Client</b></h2>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="table-wrapper">
+   <div class="table-title">
+      <div class="row">
+         <div class="col-sm-8">
+            <h2>Bloc <b>Produit</b></h2>
+         </div>
+         <div class="col-sm-4">
+            <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Ajouter un produit</button>
+         </div>
+      </div>
+   </div>
+   <table class="table table-bordered">
+      <thead>
+         <tr>
+            <th>Réf.</th>
+            <th style="width:150px;">Désignation</th>
+            <th>Quantité</th>
+            <th>Prix unitaire</th>
+            <th>Remise</th>
+            <th>Montant</th>
+            <th>TVA</th>
+         </tr>
+      </thead>
+      <tbody>
+         <tr>
+            <td>253</td>
+            <td>Bloc de foie gras oie</td>
+            <td>10</td>
+            <td>2</td>
+            <td>0%</td>
+            <td>20€</td>
+            <td>20%</td>
+            <td>
+               <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+               <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+               <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+            </td>
+         </tr>
+         <tr>
+            <td>23</td>
+            <td>Terrine de St Jacques</td>
+            <td>20</td>
+            <td>30</td>
+            <td>2%</td>
+            <td>588€</td>
+            <td>20%</td>
+            <td>
+               <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+               <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+               <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+            </td>
+         </tr>
+      </tbody>
+   </table>
+</div>
+<div class="table-wrapper">
+   <div class="table-title">
+      <div class="row">
+         <div class="col-sm-12">
+            <h2>Bloc <b>Récapitulatif</b></h2>
+         </div>
+      </div>
+   </div>
+   
+</div>
+            </div>
+            <!-- END MAIN CONTENT-->
+            <!-- END PAGE CONTAINER-->
+        </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+	<script src="js/commande.js"></script>
+
+
 </body>
 </html>                            
