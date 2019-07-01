@@ -9,7 +9,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>Bon de commande</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -184,12 +184,94 @@
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
-            <div class="main-content">
-                <div class="table-wrapper">
+   <div class="main-content">
+	<div class="row">
+		   <div class="table-wrapper col-sm-5">
+	   <div class="table-title">
+      
+	
+		 <div class="col-sm-12">
+            <h2>Bloc <b>Canard Dodu</b></h2>
+				<div class="col-sm-12">
+					<label for="name">Agence</label>	
+				</div>
+				
+				<div class="col-sm-12">
+								<label for="name">Adresse</label>
+				</div>
+				<div class="col-sm-12">
+								<label for="name">Email</label>
+				</div>
+				<div class="col-sm-12">
+								<label for="name">Numéro téléphone</label>
+				</div>
+
+         </div>
+   </div>
+   </div>
+   
+   
+     <div class="table-wrapper col-sm-5">
+	   <div class="table-title">
+	
+		 <div class="col-sm-12">
+            <h2>Bloc <b>Récapitulatif</b></h2>
+			<div class="col-sm-12">
+					<label for="name">Nom employé : Alain Birmont</label>	
+				</div>
+				
+				<div class="col-sm-12">
+								<label for="name">Date d'émission</label>
+				</div>
+				<div class="col-sm-12">
+								<label for="name">Numéro de commande</label>
+				</div>
+								<div class="col-sm-12">
+								<label for="name">Date livraison estimée</label>
+				</div>
+        
+      </div>
+   </div>
+   </div>
+	
+	</div>
+   
+
+   
+   <div class="table-wrapper">
    <div class="table-title">
       <div class="row">
-         <div class="col-sm-12">
+	
+		 <div class="col-sm-12">
             <h2>Bloc <b>Client</b></h2>
+			<div class="col-sm-12">
+			<label for="name">Nom Client:</label>
+			<input type="text" id="nomclient" name="name" required
+				   minlength="4" value="Minola" maxlength="8" size="10">
+			
+
+			</div>
+			
+			<div class="col-sm-12">
+						<label for="name">Adresse Facturation:</label>
+			<input type="text" id="AdresseFact" name="name" required
+				   minlength="4" value="23 rue marwa" maxlength="8" size="10">
+				   
+			<label for="name">Adresse Livraison:</label>
+			<input type="text" id="AdresseLiv" name="name" required
+				   minlength="4" value="23 rue marwa" maxlength="8" size="10">
+			
+
+			</div>
+
+			<div class="col-sm-12">
+			<label for="name">Mode de réglement:</label>
+			<input type="text" id="ModeReg" name="name" required
+				   minlength="4" value="Chèque 30j fin de mois" maxlength="8" size="10">
+		    <label for="name">Remise exceptionelle</label>
+			<input type="text" id="RemiseExcept" name="name" required
+				   minlength="4" value="0" maxlength="8" size="10">
+			</div>
          </div>
       </div>
    </div>
@@ -205,7 +287,7 @@
          </div>
       </div>
    </div>
-   <table class="table table-bordered">
+   <table class="table table-bordered" id="tablecom">
       <thead>
          <tr>
             <th>Réf.</th>
@@ -254,7 +336,48 @@
       <div class="row">
          <div class="col-sm-12">
             <h2>Bloc <b>Récapitulatif</b></h2>
+						<div class="row">
+			<div class="col-sm-6">
+						<label for="name">Commentaire:</label>
+			<input type="text" id="RemiseExcept" name="name" required
+				   minlength="4" value="La commande doit être emballé" maxlength="50" size="50">
+			</div>
+			<div class="col-sm-6">
+			 <table class="table table-bordered">
+
+			<tbody>
+			 <tr>
+			 <td>Livraison (€)</td>
+			 <td>253</td>
+			 <tr>
+				   <tr>
+			 <td>Total HT (€)</td>
+			 <td>253</td>
+			 <tr>
+				   <tr>
+			 <td>Total TTC  (€)</td>
+			 <td>253</td>
+			 <tr>
+				   <tr>
+			 <td>Net à payer (€)</td>
+			 <td>253</td>
+			 <tr>
+			 
+			</tbody>
+			 </table>
+			 </div>
+			 </div>
          </div>
+		 <div class="col-sm-12">
+		 <button class="au-btn au-btn-icon au-btn--green au-btn--small pull-right"style=" margin-top: 10px;margin-left: 5px;">
+         <i class="zmdi"></i>Enregistrer une commande</button>
+		 
+		 <button class="au-btn au-btn-icon btn-danger au-btn--small pull-right"style=" margin-top: 10px;">
+         <i class="zmdi"></i>Annuler la commande</button>
+		 
+
+
+		 </div>
       </div>
    </div>
    
