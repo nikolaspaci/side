@@ -64,7 +64,11 @@ textarea:focus {
 }
 
 input, textarea {
-    border: none;
+    /* border: none; */
+	background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+	border-radius: 2px;
 }
 
 button {

@@ -34,6 +34,7 @@
     <link href="css/theme.css" rel="stylesheet" media="all">
 	<link rel="stylesheet" href="css/commande.css">
 	<script src="js/commande.js"></script>
+	
 
 </head>
 <body class="">
@@ -90,7 +91,7 @@
         <!-- MENU SIDEBAR-->
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
-                <a href="#">
+                <a href="TableaudeBord.html">
                     <img src="images/icon/LogoSide.png" alt="Cool Admin" />
                 </a>
             </div>
@@ -98,27 +99,27 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="chart.html">
+                            <a href="TableaudeBord.html">
                                 <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>
                         </li>
                         <li>
-                            <a href="table.html">
+                            <a href="ListeCommande.html">
                                 <i class="fas fa-table"></i>Commandes</a>
                         </li>
                         <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Clients</a>
+                            <a href="#">
+                                <i class="fas fa-users"></i>Clients</a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Livraison</a>
+                                <i class="fas fa-truck"></i>Livraison</a>
                         </li>
                         <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Articles</a>
+                            <a href="#">
+                                <i class="fas fa-utensils"></i>Articles</a>
                         </li>
                         <li>
-                            <a href="map.html">
+                            <a href="#">
                                 <i class="fas fa-map-marker-alt"></i>Stock</a>
                         </li>
                     </ul>
@@ -170,7 +171,7 @@
 
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="login.html">
                                                     <i class="zmdi zmdi-power"></i>Déconnexion</a>
                                             </div>
                                         </div>
@@ -186,24 +187,44 @@
             <!-- MAIN CONTENT-->
    <div class="main-content">
 	<div class="row">
-		   <div class="table-wrapper col-sm-5">
+	<div class="table-wrapper col-sm-5">
 	   <div class="table-title">
       
 	
 		 <div class="col-sm-12">
             <h2>Bloc <b>Canard Dodu</b></h2>
 				<div class="col-sm-12">
-					<label for="name">Agence</label>	
+					<label for="name">Agence:</label>
+								</div>
+				<div class="col-sm-12">
+
+					<input type="text" value="Paris" disabled="disabled" name="numcom" id="numcom">
+					
 				</div>
 				
 				<div class="col-sm-12">
-								<label for="name">Adresse</label>
+								<label for="name">Adresse:</label>
+</div>							
+											<div class="col-sm-12">
+
+							<input type="text" value="23 Rue leon blum" disabled="disabled" name="numcom" id="numcom">
+
 				</div>
 				<div class="col-sm-12">
-								<label for="name">Email</label>
+								<label for="name">Email:</label>
+								</div>
+												<div class="col-sm-12">
+
+								<input type="text" value="servicecom@canardodu.fr" disabled="disabled" name="numcom" id="numcom">
+
 				</div>
 				<div class="col-sm-12">
-								<label for="name">Numéro téléphone</label>
+								<label for="name">Numéro téléphone:</label>
+</div>								
+												<div class="col-sm-12">
+
+								<input type="text" value="0162736738" disabled="disabled" name="numcom" id="numcom">
+
 				</div>
 
          </div>
@@ -215,19 +236,36 @@
 	   <div class="table-title">
 	
 		 <div class="col-sm-12">
-            <h2>Bloc <b>Récapitulatif</b></h2>
+            <h2>Bloc <b>Informations</b></h2>
 			<div class="col-sm-12">
-					<label for="name">Nom employé : Alain Birmont</label>	
+					<label for="name">Nom employé :</label>	
+</div>
+								<div class="col-sm-12">
+
+					<input type="text" value="Alain Birmont" disabled="disabled">
 				</div>
 				
 				<div class="col-sm-12">
-								<label for="name">Date d'émission</label>
+								<label for="name">Date d'émission:</label>
+								</div>
+											<div class="col-sm-12">
+
+								<input type="date" id="start" name="trip-start">
 				</div>
 				<div class="col-sm-12">
-								<label for="name">Numéro de commande</label>
+								<label for="name">Numéro de commande:</label>
+								</div>
+											<div class="col-sm-12">
+
+								<input type="text" value="67738729" disabled="disabled" name="numcom" id="numcom">
 				</div>
 								<div class="col-sm-12">
-								<label for="name">Date livraison estimée</label>
+								<label for="name">Date livraison estimée:</label>
+</div>								
+											<div class="col-sm-12">
+
+								<input type="date" id="start" name="trip-start">
+
 				</div>
         
       </div>
@@ -246,8 +284,14 @@
             <h2>Bloc <b>Client</b></h2>
 			<div class="col-sm-12">
 			<label for="name">Nom Client:</label>
-			<input type="text" id="nomclient" name="name" required
+			<input type="text" list="listclient" id="nomclient" name="name" required
 				   minlength="4" value="Minola" maxlength="8" size="10">
+				   <datalist id="listclient">
+				<option value="Marda">
+				<option value="Baog">
+				<option value="Tigra">
+				<option value="Tinouia">
+				</datalist>
 			
 
 			</div>
@@ -255,20 +299,47 @@
 			<div class="col-sm-12">
 						<label for="name">Adresse Facturation:</label>
 			<input type="text" id="AdresseFact" name="name" required
-				   minlength="4" value="23 rue marwa" maxlength="8" size="10">
-				   
+				   minlength="4" list="listadresse" value="23 rue marwa" maxlength="" size="">
+				<datalist id="listadresse">
+				<option value="23 rue marwa,Paris">
+				<option value="15 rue aya,Levallois">
+				<option value="12 rue de pavé,Aubervilliers">
+				<option value="rue du bat sept,Evry ">
+				</datalist>
+						</div>
+
+						<div class="col-sm-12">
+
 			<label for="name">Adresse Livraison:</label>
 			<input type="text" id="AdresseLiv" name="name" required
-				   minlength="4" value="23 rue marwa" maxlength="8" size="10">
-			
+				   minlength="4" list="listadresseliv" value="23 rue marwa" maxlength="" size="">
+				 <datalist id="listadresseliv">
+				<option value="23 rue marwa,Paris">
+				<option value="15 rue aya,Levallois">
+				<option value="12 rue de pavé,Aubervilliers">
+				<option value="rue du bat sept,Evry ">
+				<option value="14 rue du bat,Versailles ">
+
+				</datalist>
 
 			</div>
 
 			<div class="col-sm-12">
 			<label for="name">Mode de réglement:</label>
-			<input type="text" id="ModeReg" name="name" required
-				   minlength="4" value="Chèque 30j fin de mois" maxlength="8" size="10">
-		    <label for="name">Remise exceptionelle</label>
+			<input type="text" list="listepaiement" id="ModeReg" name="name" required
+				   minlength="" value="Chèque 30j fin de mois" maxlength="" size="">
+			<datalist id="listepaiement">
+				<option value="Chèque 30j fin de mois">
+				<option value="Chèque 60j fin de mois">
+				<option value="Carte bleue">
+				<option value="Virement">
+				<option value="Espèce">
+
+				</datalist>
+			</div>
+						<div class="col-sm-12">
+
+			<label for="name">Remise exceptionelle:</label>
 			<input type="text" id="RemiseExcept" name="name" required
 				   minlength="4" value="0" maxlength="8" size="10">
 			</div>
@@ -280,7 +351,7 @@
    <div class="table-title">
       <div class="row">
          <div class="col-sm-8">
-            <h2>Bloc <b>Produit</b></h2>
+            <h2>Bloc <b>Produits</b></h2>
          </div>
          <div class="col-sm-4">
             <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Ajouter un produit</button>
@@ -292,10 +363,10 @@
          <tr>
             <th>Réf.</th>
             <th style="width:150px;">Désignation</th>
-            <th>Quantité</th>
-            <th>Prix unitaire</th>
+            <th>Qté</th>
+            <th>P.U HT</th>
             <th>Remise</th>
-            <th>Montant</th>
+            <th>Tot. HT</th>
             <th>TVA</th>
          </tr>
       </thead>
@@ -320,7 +391,7 @@
             <td>20</td>
             <td>30</td>
             <td>2%</td>
-            <td>588€</td>
+            <td>580.8€</td>
             <td>20%</td>
             <td>
                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
@@ -340,7 +411,7 @@
 			<div class="col-sm-6">
 						<label for="name">Commentaire:</label>
 			<input type="text" id="RemiseExcept" name="name" required
-				   minlength="4" value="La commande doit être emballé" maxlength="50" size="50">
+				   minlength="4" value="Commande bien emballée" maxlength="" size="20">
 			</div>
 			<div class="col-sm-6">
 			 <table class="table table-bordered">
@@ -348,19 +419,19 @@
 			<tbody>
 			 <tr>
 			 <td>Livraison (€)</td>
-			 <td>253</td>
+			 <td>10</td>
 			 <tr>
 				   <tr>
 			 <td>Total HT (€)</td>
-			 <td>253</td>
+			 <td>600.8</td>
 			 <tr>
 				   <tr>
 			 <td>Total TTC  (€)</td>
-			 <td>253</td>
+			 <td>720.96</td>
 			 <tr>
 				   <tr>
 			 <td>Net à payer (€)</td>
-			 <td>253</td>
+			 <td>730,96</td>
 			 <tr>
 			 
 			</tbody>
@@ -369,11 +440,9 @@
 			 </div>
          </div>
 		 <div class="col-sm-12">
-		 <button class="au-btn au-btn-icon au-btn--green au-btn--small pull-right"style=" margin-top: 10px;margin-left: 5px;">
-         <i class="zmdi"></i>Enregistrer une commande</button>
-		 
-		 <button class="au-btn au-btn-icon btn-danger au-btn--small pull-right"style=" margin-top: 10px;">
-         <i class="zmdi"></i>Annuler la commande</button>
+		<a href="TableaudeBord.html" class="btn btn-success pull-right" style=" margin-top: 10px;margin-left: 5px; role="button">Enregistrer la commande</a>
+		<a href="TableaudeBord.html" class="btn btn-danger pull-right" style=" margin-top: 10px;margin-left: 5px; role="button">Annuler la commande</a>
+
 		 
 
 
@@ -413,7 +482,29 @@
     <!-- Main JS-->
     <script src="js/main.js"></script>
 	<script src="js/commande.js"></script>
+	
+	<script>
+		var art1 = {reference:"23", name:"Terrine de St Jacques", remise:50, prix:10,tva:20};
+		var art2 = {reference:"253", name:"Bloc de foie gras oie", remise:50, prix:15,tva:20};
+		var art3 = {reference:"120", name:"Terrine de canard", remise:50, prix:20,tva:20};
+		var art4 = {reference:"45", name:"Terrine de porc", remise:50, prix:10,tva:20};
+		var listart = [art1,art2,art3,art4];
 
+		$(document).change(function(){
+document.getElementById('refsearch').addEventListener('change', function () {
+   console.log('changed'); 
+});
+			
+			$("#namesearch").change(function(){
+			for(var i= 0; i < listart.length; i++)
+			{
+			if (listart[i].name==document.getElementById('namesearch').value){
+			}
+			}
+			    console.log(document.getElementById('namesearch').value); //WORKS
+			});
+		});
+	</script>
 
 </body>
 </html>                            

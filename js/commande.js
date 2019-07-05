@@ -6,9 +6,21 @@ $(document).ready(function(){
 		$(this).attr("disabled", "disabled");
 		var index = $("#tablecom tbody tr:last-child").index();
         var row = '<tr>' +
-            '<td><input type="text" class="form-control" name="name" id="name"></td>' +
-            '<td><input type="text" class="form-control" name="department" id="department"></td>' +
-            '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
+            '<td><input type="text" list="listeref" class="form-control" name="ref" id="refsearch" >'
+			+'<datalist id="listeref">'+
+			  '<option value="23">'+
+			  '<option value="253">'+
+			  '<option value="120">'+
+			 ' <option value="45">'+
+			'</datalist>'+'</td>' 
+			+'<td><input type="text" class="form-control" list="listearticle" name="name" id="namesearch">   '         
+			+'<datalist id="listearticle">'+
+  '<option value="Terrine de St Jacques">'+
+  '<option value="Bloc de foie gras oie">'+
+  '<option value="Terrine de canard">'+
+ ' <option value="Terrine de porc">'+
+'</datalist>'+'</td>' +
+			'<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
 			'<td><input type="text" class="form-control" name="name" id="name"></td>' +
             '<td><input type="text" class="form-control" name="department" id="department"></td>' +
             '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
