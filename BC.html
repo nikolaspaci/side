@@ -364,10 +364,10 @@
             <th>Réf.</th>
             <th style="width:150px;">Désignation</th>
             <th>Qté</th>
-            <th>P.U HT</th>
-            <th>Remise</th>
-            <th>Tot. HT</th>
-            <th>TVA</th>
+            <th>P.U HT(€)</th>
+            <th>Rem.(%)</th>
+            <th>Tot. HT(€)</th>
+            <th>TVA(%)</th>
          </tr>
       </thead>
       <tbody>
@@ -376,9 +376,9 @@
             <td>Bloc de foie gras oie</td>
             <td>10</td>
             <td>2</td>
-            <td>0%</td>
-            <td>20€</td>
-            <td>20%</td>
+            <td>0</td>
+            <td>20</td>
+            <td>20</td>
             <td>
                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
@@ -390,9 +390,9 @@
             <td>Terrine de St Jacques</td>
             <td>20</td>
             <td>30</td>
-            <td>2%</td>
-            <td>580.8€</td>
-            <td>20%</td>
+            <td>2</td>
+            <td>580.8</td>
+            <td>20</td>
             <td>
                <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
                <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
@@ -440,8 +440,8 @@
 			 </div>
          </div>
 		 <div class="col-sm-12">
-		<a href="TableaudeBord.html" class="btn btn-success pull-right" style=" margin-top: 10px;margin-left: 5px; role="button">Enregistrer la commande</a>
-		<a href="TableaudeBord.html" class="btn btn-danger pull-right" style=" margin-top: 10px;margin-left: 5px; role="button">Annuler la commande</a>
+		<a href="ListeCommande.html" class="btn btn-success pull-right" style=" margin-top: 10px;margin-left: 5px; role="button">Enregistrer la commande</a>
+		<a href="ListeCommande.html" class="btn btn-danger pull-right" style=" margin-top: 10px;margin-left: 5px; role="button">Annuler la commande</a>
 
 		 
 
@@ -484,24 +484,52 @@
 	<script src="js/commande.js"></script>
 	
 	<script>
-		var art1 = {reference:"23", name:"Terrine de St Jacques", remise:50, prix:10,tva:20};
-		var art2 = {reference:"253", name:"Bloc de foie gras oie", remise:50, prix:15,tva:20};
-		var art3 = {reference:"120", name:"Terrine de canard", remise:50, prix:20,tva:20};
-		var art4 = {reference:"45", name:"Terrine de porc", remise:50, prix:10,tva:20};
+		var art1 = {reference:"23", name:"Terrine de St Jacques", remise:10, prix:10,tva:20};
+		var art2 = {reference:"253", name:"Bloc de foie gras oie", remise:15, prix:15,tva:20};
+		var art3 = {reference:"120", name:"Terrine de canard", remise:0, prix:20,tva:20};
+		var art4 = {reference:"45", name:"Terrine de porc", remise:5, prix:8,tva:20};
 		var listart = [art1,art2,art3,art4];
-
-		$(document).change(function(){
-document.getElementById('refsearch').addEventListener('change', function () {
-   console.log('changed'); 
-});
+		$(document).bind('DOMSubtreeModified',function(){
 			
 			$("#namesearch").change(function(){
-			for(var i= 0; i < listart.length; i++)
-			{
-			if (listart[i].name==document.getElementById('namesearch').value){
-			}
-			}
-			    console.log(document.getElementById('namesearch').value); //WORKS
+			var trmodified=$(this).closest('tr');
+			console.log(trmodified);
+				for(var i= 0; i < listart.length; i++)
+				{
+					if (listart[i].name==document.getElementById('namesearch').value){
+						trmodified.find('#refsearch').val(listart[i].reference);
+						trmodified.find('#newremise').val(listart[i].remise);
+						trmodified.find('#newpu').val(listart[i].prix);
+						trmodified.find('#newtva').val(listart[i].tva);				
+					}
+				}
+			});
+			
+			
+			
+			$("#refsearch").change(function(){
+			var trmodified=$(this).closest('tr');
+			console.log(trmodified);
+				for(var i= 0; i < listart.length; i++)
+				{
+					if (listart[i].reference==document.getElementById('refsearch').value){
+						trmodified.find('#namesearch').val(listart[i].name);
+						trmodified.find('#newremise').val(listart[i].remise);
+						trmodified.find('#newpu').val(listart[i].prix);
+						trmodified.find('#newtva').val(listart[i].tva);				
+					}
+				}
+			});
+			
+			$("#newqte,#newpu,#newremise").change(function(){
+			var trmodified=$(this).closest('tr');
+			var qte=trmodified.find('#newqte').val();
+			var pu=trmodified.find('#newpu').val();
+			var remise=trmodified.find('#newremise').val();
+			var puremise=pu*(1-(remise/100));
+			var prixtot=qte*puremise;
+			trmodified.find('#newtot').val(prixtot.toFixed(1));
+
 			});
 		});
 	</script>

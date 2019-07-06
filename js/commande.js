@@ -6,7 +6,7 @@ $(document).ready(function(){
 		$(this).attr("disabled", "disabled");
 		var index = $("#tablecom tbody tr:last-child").index();
         var row = '<tr>' +
-            '<td><input type="text" list="listeref" class="form-control" name="ref" id="refsearch" >'
+            '<td><input type="text" list="listeref" class="form-control" name="ref" value="" id="refsearch" >'
 			+'<datalist id="listeref">'+
 			  '<option value="23">'+
 			  '<option value="253">'+
@@ -15,21 +15,22 @@ $(document).ready(function(){
 			'</datalist>'+'</td>' 
 			+'<td><input type="text" class="form-control" list="listearticle" name="name" id="namesearch">   '         
 			+'<datalist id="listearticle">'+
-  '<option value="Terrine de St Jacques">'+
-  '<option value="Bloc de foie gras oie">'+
-  '<option value="Terrine de canard">'+
- ' <option value="Terrine de porc">'+
-'</datalist>'+'</td>' +
-			'<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
-			'<td><input type="text" class="form-control" name="name" id="name"></td>' +
-            '<td><input type="text" class="form-control" name="department" id="department"></td>' +
-            '<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
-			'<td><input type="text" class="form-control" name="phone" id="phone"></td>' +
+			  '<option value="Terrine de St Jacques">'+
+			  '<option value="Bloc de foie gras oie">'+
+			  '<option value="Terrine de canard">'+
+			 ' <option value="Terrine de porc">'+
+			'</datalist>'+'</td>' +
+			'<td><input type="text" class="form-control" name="qte" id="newqte"></td>' +
+			'<td><input type="text" class="form-control" name="pu" id="newpu"></td>' +
+            '<td><input type="text" class="form-control" name="remise" id="newremise"></td>' +
+            '<td><input type="text" class="form-control" name="tot" id="newtot"></td>' +
+			'<td><input type="text" class="form-control" name="tva" id="newtva"></td>' +
 			'<td>' + actions + '</td>' +
         '</tr>';
     	$("#tablecom").append(row);		
 		$("#tablecom tbody tr").eq(index + 1).find(".add, .edit").toggle();
         $('[data-toggle="tooltip"]').tooltip();
+
     });
 	// Add row on add button click
 	$(document).on("click", ".add", function(){
