@@ -484,10 +484,10 @@
 	<script src="js/commande.js"></script>
 	
 	<script>
-		var art1 = {reference:"23", name:"Terrine de St Jacques", remise:10, prix:10,tva:20};
-		var art2 = {reference:"253", name:"Bloc de foie gras oie", remise:15, prix:15,tva:20};
-		var art3 = {reference:"120", name:"Terrine de canard", remise:0, prix:20,tva:20};
-		var art4 = {reference:"45", name:"Terrine de porc", remise:5, prix:8,tva:20};
+		var art1 = {reference:"23", name:"Terrine de St Jacques", remise:10, prix:10,tva:20,qte:5};
+		var art2 = {reference:"253", name:"Bloc de foie gras oie", remise:15, prix:15,tva:20,qte:10};
+		var art3 = {reference:"120", name:"Terrine de canard", remise:0, prix:20,tva:20,qte:3};
+		var art4 = {reference:"45", name:"Terrine de porc", remise:5, prix:8,tva:20,qte:15};
 		var listart = [art1,art2,art3,art4];
 		$(document).bind('DOMSubtreeModified',function(){
 			
@@ -529,8 +529,20 @@
 			var puremise=pu*(1-(remise/100));
 			var prixtot=qte*puremise;
 			trmodified.find('#newtot').val(prixtot.toFixed(1));
-
 			});
+			
+			$("#newqte").change(function(){
+				for(var i= 0; i < listart.length; i++)
+				{
+					if (listart[i].name==document.getElementById('namesearch').value){
+						if (document.getElementById('newqte').value>listart[i].qte){
+							alert("stock indisponible");
+							document.getElementById('newqte').value=0;
+						}
+					}
+				}
+			});
+			
 		});
 	</script>
 
